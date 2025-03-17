@@ -5,313 +5,194 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu Order</title>
     <style>
+        /* General styles */
         * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f7fb;
-    color: #333;
-}
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7fb;
+            color: #333;
+        }
 
-header {
-    background-color: #fff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
+        header {
+            background-color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-header .logo {
-    font-size: 26px;
-    font-weight: 600;
-    color: #f44336;
-}
+        header .logo {
+            font-size: 26px;
+            font-weight: 600;
+            color: #f44336;
+        }
 
-header nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
+        header nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
 
-header nav ul li a {
-    text-decoration: none;
-    color: #555;
-    font-weight: 600;
-    font-size: 16px;
-    transition: color 0.3s;
-}
+        header nav ul li a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 600;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
 
-header nav ul li a:hover {
-    color: #f44336;
-}
+        header nav ul li a:hover {
+            color: #f44336;
+        }
 
-#cart-icon {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+        /* Cart Icon Styles */
+        #cart-icon {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-#cart-icon img {
-    width: 30px;
-    height: 30px;
-    transition: transform 0.3s ease;
-}
+        #cart-icon img {
+            width: 30px;
+            height: 30px;
+            transition: transform 0.3s ease;
+        }
 
-#cart-count {
-    position: absolute;
-    top: -5px; /* Adjust to position number closer to the corner */
-    right: -5px; /* Adjust to position number closer to the corner */
-    background-color: red;
-    color: white;
-    border-radius: 50%; /* Make it a circle */
-    width: 20px; /* Fixed width for the circle */
-    height: 20px; /* Fixed height for the circle */
-    font-size: 12px; /* Font size for the number */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+        #cart-count {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: red;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            font-size: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-.menu-container {
-    padding: 30px 20px;
-}
+        /* Menu Container */
+        .menu-container {
+            padding: 30px 20px;
+        }
 
-.menu-category h2 {
-    font-size: 28px;
-    font-weight: 700;
-    margin-bottom: 20px;
-    color: #333;
-    text-align: center;
-    text-transform: uppercase;
-}
+        .menu-category h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+            text-transform: uppercase;
+        }
 
-.menu-items {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 20px;
-}
+        .menu-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+        }
 
-.menu-item {
-    background-color: #fff;
-    border-radius: 12px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+        .menu-item {
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
-.menu-item:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
+        .menu-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
 
-.menu-item img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-}
+        .menu-item img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
 
-.menu-item h3 {
-    font-size: 18px;
-    font-weight: 600;
-    color: #333;
-    margin: 15px 0;
-    text-align: center;
-}
+        .menu-item h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+            margin: 15px 0;
+            text-align: center;
+        }
 
-.menu-item p {
-    font-size: 16px;
-    color: #f44336;
-    text-align: center;
-}
+        .menu-item p {
+            font-size: 16px;
+            color: #f44336;
+            text-align: center;
+        }
 
-.menu-item .buttons {
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
+        .menu-item .buttons {
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
 
-.menu-item .buttons button {
-    background-color: #f44336;
-    color: #fff;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 16px;
-    text-transform: uppercase;
-    transition: background-color 0.3s ease;
-}
+        .menu-item .buttons button {
+            background-color: #f44336;
+            color: #fff;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 16px;
+            text-transform: uppercase;
+            transition: background-color 0.3s ease;
+        }
 
-.menu-item .buttons button:hover {
-    background-color: #d32f2f;
-}
+        .menu-item .buttons button:hover {
+            background-color: #d32f2f;
+        }
 
-.cart-container {
-    display: none;
-    position: absolute;
-    top: 50px;
-    right: 10px;
-    background-color: white;
-    border: 1px solid #ddd;
-    padding: 20px;
-    width: 300px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-}
+        /* Cart Container */
+        .cart-container {
+            display: none;
+            position: absolute;
+            top: 50px;
+            right: 10px;
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 20px;
+            width: 300px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
 
-.cart-container.visible {
-    display: block;
-}
+        .cart-container.visible {
+            display: block;
+        }
 
-.cart-item {
-    margin-bottom: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+        /* Checkout Button */
+        #checkout {
+            background-color: #f44336;
+            color: white;
+            padding: 12px;
+            width: 100%;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            text-transform: uppercase;
+        }
 
-.cart-item button {
-    font-size: 16px;
-    padding: 5px 10px;
-    cursor: pointer;
-}
-
-#checkout {
-    background-color: #f44336;
-    color: white;
-    padding: 12px;
-    width: 100%;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 18px;
-    text-transform: uppercase;
-}
-
-#checkout:hover {
-    background-color: #d32f2f;
-}
-
-/* Add responsiveness */
-@media (max-width: 1280px) {
-    header nav ul {
-        gap: 15px;
-    }
-
-    .menu-items {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    }
-
-    .menu-item img {
-        height: 160px;
-    }
-
-    .menu-item h3 {
-        font-size: 16px;
-    }
-
-    .menu-item p {
-        font-size: 14px;
-    }
-
-    .cart-container {
-        width: 250px;
-    }
-    
-}
-
-/* Mobile Adjustments: Horizontal Navigation */
-@media (max-width: 600px) {
-    /* Header */
-    header {
-        flex-direction: column;
-        padding: 10px;
-    }
-
-    header .logo {
-        font-size: 22px;
-        text-align: center;
-        margin-bottom: 10px;
-    }
-
-    /* Mobile Navigation Menu (Horizontal Layout) */
-    header nav ul {
-        display: flex;
-        justify-content: space-between; /* Horizontally align items */
-        width: 100%;
-        gap: 10px;
-    }
-
-    header nav ul li {
-        margin: 0; /* Remove margin between list items */
-    }
-
-    header nav ul li a {
-        font-size: 14px; /* Adjust font size for mobile */
-        text-transform: uppercase;
-    }
-
-    /* Cart Icon */
-    #cart-icon img {
-        width: 24px; /* Smaller cart icon for mobile */
-        height: 24px;
-    }
-
-    /* Cart Count */
-    #cart-count {
-        top: -5px;
-        right: -5px;
-        font-size: 10px;
-        padding: 3px;
-        width: 16px;
-        height: 16px;
-    }
-
-    /* Menu Items */
-    .menu-items {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-        gap: 15px;
-    }
-
-    .menu-item img {
-        height: 120px;
-    }
-
-    .menu-item h3 {
-        font-size: 14px;
-    }
-
-    .menu-item p {
-        font-size: 12px;
-    }
-
-    .menu-item .buttons button {
-        font-size: 14px;
-        padding: 10px;
-    }
-
-    /* Cart Modal */
-    .cart-container {
-        width: 100%;
-        top: 60px;
-    }
-
-    #checkout {
-        padding: 12px;
-        font-size: 16px;
-    }
-}
-
+        #checkout:hover {
+            background-color: #d32f2f;
+        }
     </style>
 </head>
 <body>
@@ -328,7 +209,7 @@ header nav ul li a:hover {
         </nav>
         <div class="cart">
             <a href="#" id="cart-icon">
-                <img src="{{ url_for('static', filename='images/cart-icon.jpg') }}"alt="Cart Icon">
+                <img src="{{ url_for('static', filename='images/cart-icon.jpg') }}" alt="Cart Icon">
                 <span id="cart-count">0</span>
             </a>
         </div>
@@ -348,53 +229,18 @@ header nav ul li a:hover {
                         <button class="buy-now">MUA NGAY</button>
                     </div>
                 </div>
-                <!-- Item 2 -->
-                <div class="menu-item">
-                    <img src="{{ url_for('static', filename='images/chicken2.jpg') }}" alt="Đùi gà BBQ">
-                    <h3>Dùi BBQ 1pc</h3>
-                    <p>69.000đ</p>
-                    <div class="buttons">
-                        <button class="add-to-cart">THÊM VÀO GIỎ</button>
-                        <button class="buy-now">MUA NGAY</button>
-                    </div>
-                </div>
-                <!-- Item 3 -->
-                <div class="menu-item">
-                    <img src="{{ url_for('static', filename='images/chicken3.jpg') }}" alt="Đùi gà truyền thống M">
-                    <h3>Dùi gà truyền thống M 3pcs</h3>
-                    <p>91.000đ</p>
-                    <div class="buttons">
-                        <button class="add-to-cart">THÊM VÀO GIỎ</button>
-                        <button class="buy-now">MUA NGAY</button>
-                    </div>
-                </div>
-                <!-- Item 4 -->
-                <div class="menu-item">
-                    <img src="{{ url_for('static', filename='images/chicken4.jpg') }}" alt="Lườn gà rán giòn">
-                    <h3>Lườn gà rán giòn 2pcs</h3>
-                    <p>25.000đ</p>
-                    <div class="buttons">
-                        <button class="add-to-cart">THÊM VÀO GIỎ</button>
-                        <button class="buy-now">MUA NGAY</button>
-                    </div>
-                </div>
-                <!-- Item 5 -->
-                <div class="menu-item">
-                    <img src="{{ url_for('static', filename='images/chicken5.jpg') }}" alt="Gà sốt cay nóng">
-                    <h3>Gà sốt cay nóng 9pcs</h3>
-                    <p>139.000đ</p>
-                    <div class="buttons">
-                        <button class="add-to-cart">THÊM VÀO GIỎ</button>
-                        <button class="buy-now">MUA NGAY</button>
-                    </div>
-                </div>
+                <!-- Add more items here -->
             </div>
         </section>
     </div>
 
     <div id="cart-container" class="cart-container">
-        <div id="cart-list"></div>
-        <button id="checkout">Thanh toán</button>
+        <form id="checkout-form" method="POST" action="/order">
+            <div id="cart-list"></div>
+            <input type="hidden" name="order_details" id="order_details">
+            <input type="hidden" name="total_amount" id="total_amount">
+            <button type="submit" id="checkout">Thanh toán</button>
+        </form>
     </div>
 
     <script>
@@ -471,24 +317,20 @@ header nav ul li a:hover {
             updateCartList();
         }
 
-        // Checkout button functionality
-        document.getElementById('checkout').addEventListener('click', () => {
+        // Handle form submission for checkout
+        document.getElementById('checkout').addEventListener('click', (e) => {
+            e.preventDefault(); // Prevent form submission before adding data
+            
             const orderDetails = cartItems.map(item => `${item.name} x${item.quantity} - ${item.price}`).join('\n');
             const totalAmount = cartItems.reduce((total, item) => total + parseFloat(item.price.replace('đ', '').replace(',', '').trim()), 0);
-            sendOrderToBackend(orderDetails, totalAmount);
-        });
 
-        // Placeholder function to simulate sending order to backend
-        function sendOrderToBackend(orderDetails, totalAmount) {
-            fetch('/order', {
-                method: 'POST',
-                body: new URLSearchParams({
-                    order_details: orderDetails,
-                    total_amount: totalAmount
-                })
-            }).then(response => response.text())
-              .then(data => alert(data));
-        }
+            // Fill the hidden fields with order details and total amount
+            document.getElementById('order_details').value = orderDetails;
+            document.getElementById('total_amount').value = totalAmount;
+
+            // Submit the form programmatically
+            document.getElementById('checkout-form').submit();
+        });
     </script>
 </body>
 </html>
