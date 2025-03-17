@@ -230,8 +230,9 @@ header nav ul li a:hover {
     
 }
 
-/* iPhone X/11/12/13/14/15 and other smaller screens */
+/* Mobile Adjustments: Horizontal Navigation */
 @media (max-width: 600px) {
+    /* Header */
     header {
         flex-direction: column;
         padding: 10px;
@@ -239,20 +240,47 @@ header nav ul li a:hover {
 
     header .logo {
         font-size: 22px;
+        text-align: center;
+        margin-bottom: 10px;
     }
 
+    /* Mobile Navigation Menu (Horizontal Layout) */
     header nav ul {
-        flex-direction: column;
-        align-items: center;
+        display: flex;
+        justify-content: space-between; /* Horizontally align items */
+        width: 100%;
         gap: 10px;
     }
 
-    .menu-items {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    header nav ul li {
+        margin: 0; /* Remove margin between list items */
     }
 
-    .menu-item {
-        margin-bottom: 15px;
+    header nav ul li a {
+        font-size: 14px; /* Adjust font size for mobile */
+        text-transform: uppercase;
+    }
+
+    /* Cart Icon */
+    #cart-icon img {
+        width: 24px; /* Smaller cart icon for mobile */
+        height: 24px;
+    }
+
+    /* Cart Count */
+    #cart-count {
+        top: -5px;
+        right: -5px;
+        font-size: 10px;
+        padding: 3px;
+        width: 16px;
+        height: 16px;
+    }
+
+    /* Menu Items */
+    .menu-items {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 15px;
     }
 
     .menu-item img {
@@ -267,24 +295,19 @@ header nav ul li a:hover {
         font-size: 12px;
     }
 
+    .menu-item .buttons button {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    /* Cart Modal */
     .cart-container {
         width: 100%;
-    }
-
-    #cart-icon img {
-        width: 24px;
-        height: 24px;
-    }
-
-    #cart-count {
-        top: -3px;
-        right: -3px;
-        font-size: 10px;
-        padding: 3px;
+        top: 60px;
     }
 
     #checkout {
-        padding: 10px;
+        padding: 12px;
         font-size: 16px;
     }
 }
@@ -294,18 +317,13 @@ header nav ul li a:hover {
 <body>
     <header>
         <div class="logo">
-            <span>Logoipsum</span>
+            <span>Spades Menu Order</span>
         </div>
         <nav>
             <ul>
                 <li><a href="#">Tất cả</a></li>
-                <li><a href="#">Chicken</a></li>
-                <li><a href="#">Set Menu</a></li>
-                <li><a href="#">Side Menu</a></li>
-                <li><a href="#">Mỳ</a></li>
-                <li><a href="#">Salad</a></li>
-                <li><a href="#">Pizza/Burger</a></li>
-                <li><a href="#">Drink-beer</a></li>
+                <li><a href="#">Đồ Ăn</a></li>
+                <li><a href="#">Nước Uống</a></li>                
             </ul>
         </nav>
         <div class="cart">
